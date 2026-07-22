@@ -5,10 +5,11 @@
  * Copy the /exec URL it gives you into ENDPOINT in index.html.
  */
 
+var SHEET_ID = '192PAeB79RJUvk-xpYm6VZK005XaoofLNq0zjyDQOKVk';
 var SHEET_NAME = 'Responses';
 
 function sheet_() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = SpreadsheetApp.getActiveSpreadsheet() || SpreadsheetApp.openById(SHEET_ID);
   var sh = ss.getSheetByName(SHEET_NAME);
   if (!sh) {
     sh = ss.insertSheet(SHEET_NAME);
